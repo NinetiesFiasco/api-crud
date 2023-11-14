@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/mongo', async (req, res) => {
   const responsik = await addUser()
-  res.send(responsik) 
+  res.send(responsik)
 })
 
 app.listen(PORT, async () => {
