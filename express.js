@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3505
 //const GATEWAY_URL = `http://gateway:${process.env.GATEWAY_PORT}`
 
 app.get('/', (req, res) => {
-  console.log(req.headers)
   res.send(`Hello World! API CRUD ${process.env.NODE_ENV}`)
 })
 
