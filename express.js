@@ -1,19 +1,12 @@
 const express = require('express')
-//require('./mongo/connection')
-//const addUser = require('./mongo/addUser')
+const router = require('./router')
+require('./dbConnection')
 
 const app = express()
 const PORT = process.env.PORT || 3505
-//const GATEWAY_URL = `http://gateway:${process.env.GATEWAY_PORT}`
 
-app.get('/', (req, res) => {
-  res.send(`Hello World! API CRUD ${process.env.NODE_ENV}`)
-})
-
-app.get('/mongo', async (req, res) => {
-  const responsik = await addUser()
-  res.send(responsik)
-})
+app.use(express.json())
+app.use('/', router)
 
 app.listen(PORT, async () => {
   console.log(`Example app listening on port ${PORT} environment: ${process.env.NODE_ENV}`)
