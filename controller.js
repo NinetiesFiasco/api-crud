@@ -24,7 +24,7 @@ const read = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  try {
+    try {
     const user = await OpenCrud.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json({res: user});
   } catch (error) {

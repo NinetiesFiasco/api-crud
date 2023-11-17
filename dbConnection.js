@@ -5,7 +5,6 @@ const MONGO_USER = process.env.MONGO_USER;
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 
 mongoose.connect(MONGO_URL, {
-  useUnifiedTopology: true,
   user: MONGO_USER,
   pass: MONGO_PASSWORD
 })
